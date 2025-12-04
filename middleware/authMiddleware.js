@@ -24,7 +24,7 @@ const protect = async (req, res, next) => {
             if (!user) {
                 return res.status(401).json({ error: 'Not authorized, user not found' });
             }
-
+            
             // إضافة بيانات المستخدم لكي تكون متاحة في الـ Controllers
             req.user = user;
             req.user.id = user.user_id; // لتسهيل الوصول إليه باسم req.user.id
